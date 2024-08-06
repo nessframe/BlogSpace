@@ -1,0 +1,8 @@
+.MyButton {
+    padding: 4px 15px;
+    color: blueviolet;
+    background: transparent;
+    font-size: 15px;
+    border: 1px solid blueviolet;
+    cursor: pointer;
+}
