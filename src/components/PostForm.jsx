@@ -14,7 +14,6 @@ const PostForm = ({create, posts}) => {
             ...post
         }
 
-    //  перезаписываем posts
         create(newPost)
         setPost({title: '', body: '',})
     }
