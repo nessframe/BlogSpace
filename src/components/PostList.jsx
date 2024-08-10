@@ -2,6 +2,16 @@ import React, {useState} from "react";
 import Post from "./Post";
 
 const PostList = ({posts, remove, title},) => {
+
+    if (!posts.length) {
+        return(
+            <h1 style={{textAlign: 'center', padding: '20px 0'}}>
+                <p style={{color: 'red'}}>404</p>
+                posts not found
+            </h1>
+        )
+    }
+
     return (
         <div>
             <h1 style={{textAlign: 'center'}}>
