@@ -1,4 +1,4 @@
-import React, {useMemo, useRef, useState} from "react";
+import React, {useMemo, useState} from "react";
 import "./styles/App.css"
 import PostList from "./components/PostList";
 import PostForm from "./components/PostForm";
@@ -8,10 +8,10 @@ import MyButton from "./components/UI/button/MyButton";
 
 function App() {
     const [posts, setPosts] = useState([
-        {id: 1, title: 'Java', body: 'about the Java!'},
-        {id: 2, title: 'Python', body: 'about the Python!'},
-        {id: 3, title: 'C#', body: 'about the C#!'},
-        {id: 4, title: 'C++', body: 'about the C++!'},
+        {id: 1, title: 'Java', body: 'about the Java!',},
+        {id: 2, title: 'Python', body: 'about the Python!',},
+        {id: 3, title: 'C#', body: 'about the C#!',},
+        {id: 4, title: 'C++', body: 'about the C++!',}
     ]);
     function createPost(newPost) {
         setPosts([...posts, newPost])

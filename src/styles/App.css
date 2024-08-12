@@ -16,3 +16,21 @@ body {
     margin: 20px 0px;
     border: 2px solid blueviolet;
 }
+
+
+.post-enter {
+    transform: translateX(-1000px);
+    transition: all 500ms ease-in;
+}
+.post-enter-active {
+    transform: translateX(0px);
+    transition: all 500ms ease-in;
+}
+.post-exit {
+    transform: translateX(0px);
+    transition: all 500ms ease-in;
+}
+.post-exit-active {
+    transform: translateX(-1000px);
+    transition: all 500ms ease-in;
+}
