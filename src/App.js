@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./styles/App.css"
 import PostList from "./components/PostList";
 import PostForm from "./components/PostForm";
@@ -6,13 +6,12 @@ import PostFilter from "./components/PostFilter";
 import MyModal from "./components/UI/MyModal/MyModal";
 import MyButton from "./components/UI/button/MyButton";
 import { usePosts } from "./hooks/usePosts";
+import PostService from "./API/PostService";
 
 function App() {
+    const [postsLoading, setPostsLoading] = useState(false)
     const [posts, setPosts] = useState([
-        {id: 1, title: 'Java', body: 'about the Java!',},
-        {id: 2, title: 'Python', body: 'about the Python!',},
-        {id: 3, title: 'C#', body: 'about the C#!',},
-        {id: 4, title: 'C++', body: 'about the C++!',}
+
     ]);
     function createPost(newPost) {
         setPosts([...posts, newPost])
@@ -26,6 +25,15 @@ function App() {
     const [filter, setFilter] = useState({sort: '', query: '',})
     const sortedAndSearchPosts = usePosts(posts, filter.sort, filter.query)
 
+    async function fetchPosts() {
+        setPostsLoading(true)
+        const posts = await PostService.getAll()
+        setPosts(posts)
+        setPostsLoading(false)
+    }
+    useEffect(() => {
+        fetchPosts()
+    }, [])
 
     const [modal, setModal] = useState(false)
 
@@ -48,7 +56,10 @@ function App() {
                 filter={filter}
                 setFilter={setFilter}
             />
-            <PostList remove={removePost} posts={sortedAndSearchPosts} title='Posts:'/>
+            { postsLoading
+                ? <h1>Posts loading....</h1>
+                : <PostList remove={removePost} posts={sortedAndSearchPosts} title='Posts:'/>
+            }
         </>
     );
 }
