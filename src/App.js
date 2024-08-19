@@ -7,12 +7,14 @@ import MyModal from "./components/UI/MyModal/MyModal";
 import MyButton from "./components/UI/button/MyButton";
 import { usePosts } from "./hooks/usePosts";
 import PostService from "./API/PostService";
+import Loader from "./components/UI/Loader/Loader";
 
 function App() {
     const [postsLoading, setPostsLoading] = useState(false)
-    const [posts, setPosts] = useState([
+    const [posts, setPosts] = useState([]);
+    const [modal, setModal] = useState(false)
+    const [filter, setFilter] = useState({sort: '', query: '',})
 
-    ]);
     function createPost(newPost) {
         setPosts([...posts, newPost])
         setModal(false)
@@ -21,8 +23,6 @@ function App() {
         setPosts(posts.filter(e => e.id !== post.id))
     }
 
-
-    const [filter, setFilter] = useState({sort: '', query: '',})
     const sortedAndSearchPosts = usePosts(posts, filter.sort, filter.query)
 
     async function fetchPosts() {
@@ -34,8 +34,6 @@ function App() {
     useEffect(() => {
         fetchPosts()
     }, [])
-
-    const [modal, setModal] = useState(false)
 
 
     return (
@@ -57,7 +55,7 @@ function App() {
                 setFilter={setFilter}
             />
             { postsLoading
-                ? <h1>Posts loading....</h1>
+                ? <Loader/>
                 : <PostList remove={removePost} posts={sortedAndSearchPosts} title='Posts:'/>
             }
         </>
