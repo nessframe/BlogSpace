@@ -16,3 +16,6 @@ body {
     margin: 20px 0px;
     border: 2px solid blueviolet;
 }
+.routWrapper {
+    min-height: 86vh;
+}
