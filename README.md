@@ -29,6 +29,7 @@ BlogSpace is application for managing posts. It fetches data from JSONPlaceholde
 
 2. Navigate to the project directory:
 
+   ```bash
    cd BlogSpace
 
 3. Install dependencies:
