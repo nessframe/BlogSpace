@@ -6,9 +6,12 @@
 }
 .link {
     margin-right: 20px;
+    cursor: pointer;
 }
 
 .logo {
     display: flex;
     align-items: center;
+    text-decoration: none;
+    color: #fff;
 }

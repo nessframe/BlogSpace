@@ -5,10 +5,10 @@ import logo from './logo.svg'
 export default function Navbar() {
     return(
         <div className={styles.navbar}>
-            <div className={styles.logo}>
+            <Link to="/home" className={styles.logo}>
                 <img src={logo} alt={'logo'}/>
                 <span>BlogSpace</span>
-            </div>
+            </Link>
             <div>
                 <Link className={styles.link} to="/home">home</Link>
                 <Link className={styles.link} to="/posts">posts</Link>
