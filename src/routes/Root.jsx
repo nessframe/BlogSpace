@@ -1,10 +1,15 @@
-import { Link } from "react-router-dom";
+import Navbar from "../components/navbar/Navbar";
+import Footer from "../components/footer/Footer";
+import {Outlet} from "react-router-dom";
 
 export default function Root() {
     return(
         <div>
-            <h1>Welcome to posts app!</h1>
-            <p>start use app: <Link to="/posts">GO</Link></p>
+            <Navbar />
+                <div style={{minHeight: '100vh'}}>
+                    <Outlet />
+                </div>
+            <Footer />
         </div>
     )
 }
