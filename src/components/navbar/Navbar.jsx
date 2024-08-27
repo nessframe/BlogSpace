@@ -10,16 +10,16 @@ export default function Navbar() {
 
     return(
         <div className={styles.navbar}>
-            <Link to="/home" className={styles.logo}>
+            <Link to="/BlogSpace/home" className={styles.logo}>
                 <img src={logo} alt={'logo'}/>
                 <span>BlogSpace</span>
             </Link>
             <div>
-                <Link className={styles.link} to="/home">home</Link>
-                <Link className={styles.link} to="/posts">posts</Link>
-                <Link className={styles.link} to="/about">about</Link>
+                <Link className={styles.link} to="/BlogSpace/home">home</Link>
+                <Link className={styles.link} to="/BlogSpace/posts">posts</Link>
+                <Link className={styles.link} to="/BlogSpace/about">about</Link>
                 <div className={styles.linkLoginCont}>
-                    <Link to="/login" className={styles.linkLogin}>
+                    <Link to="/BlogSpace/login" className={styles.linkLogin}>
                         <span>{auth ? `${name}`: 'login'}</span>
                         <img src={loginIcon} alt={''}/>
                     </Link>

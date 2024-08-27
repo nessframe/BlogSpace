@@ -16,7 +16,7 @@ const Routing = () => {
 
     const router = createBrowserRouter([
         {
-            path: '/',
+            path: 'BlogSpace/',
             element: <Root />,
             errorElement: <Error />,
             children: [
@@ -25,23 +25,23 @@ const Routing = () => {
                     element: <Home />
                 },
                 {
-                    path: 'home',
+                    path: '/BlogSpace/home',
                     element: <Home />
                 },
                 {
-                    path: 'posts',
+                    path: '/BlogSpace/posts',
                     element: <Posts />
                 },
                 {
-                    path: 'posts/:id',
+                    path: '/BlogSpace/posts/:id',
                     element: <PostIdPage />
                 },
                 {
-                    path: 'about',
+                    path: '/BlogSpace/about',
                     element: <About />
                 },
                 {
-                    path: 'login',
+                    path: '/BlogSpace/login',
                     element: isAuth === false ? <Login /> : <Authorized />
                 }
             ]

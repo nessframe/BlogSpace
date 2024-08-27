@@ -10,7 +10,7 @@ const Post = (props) => {
             <div className="post-content">
                 <strong className="post-heading">
                     {props.post.id}. <span
-                    onClick={() => {router(`/posts/${props.post.id}`)}}
+                    onClick={() => {router(`/BlogSpace/posts/${props.post.id}`)}}
                     style={{textDecoration: 'underline', cursor: 'pointer'}}>
                         {props.post.title}
                     </span>

@@ -19,3 +19,8 @@ body {
 .routWrapper {
     min-height: 86vh;
 }
+@media (max-width: 600px) {
+    #root {
+        padding: 5px;
+    }
+}

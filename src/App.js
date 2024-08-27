@@ -1,5 +1,5 @@
 import "./styles/App.css"
-import Routing from "./routing/Routing";
+import Routing from "./Routing/Routing";
 import {AuthContext} from "./context/context";
 import {useState} from "react";
 
