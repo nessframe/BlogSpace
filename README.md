@@ -23,10 +23,6 @@ BlogSpace is a versatile application for managing and interacting with posts. It
 - **Webpack**
 
 
-## Author
-nessframe
-
-
 ## Installation and Usage
 
 1.  Navigate to desktop (optional):
@@ -53,4 +49,8 @@ nessframe
 
    ```bash
    npm start
-   
+
+
+## Author
+nessframe
+
