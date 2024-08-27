@@ -21,6 +21,7 @@ const PostIdPage = () => {
     })
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         fetchPost()
         fetchCom()
     }, [])
