@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom'
 import styles from './Navbar.module.css'
 import logo from './logo.svg'
+import loginIcon from  './login.svg'
 
 export default function Navbar() {
+
+    const auth = localStorage.getItem('auth')
+    const name = localStorage.getItem('name')
+
     return(
         <div className={styles.navbar}>
             <Link to="/home" className={styles.logo}>
@@ -13,6 +18,12 @@ export default function Navbar() {
                 <Link className={styles.link} to="/home">home</Link>
                 <Link className={styles.link} to="/posts">posts</Link>
                 <Link className={styles.link} to="/about">about</Link>
+                <div className={styles.linkLoginCont}>
+                    <Link to="/login" className={styles.linkLogin}>
+                        <span>{auth ? `${name}`: 'login'}</span>
+                        <img src={loginIcon} alt={''}/>
+                    </Link>
+                </div>
             </div>
         </div>
     )

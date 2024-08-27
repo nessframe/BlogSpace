@@ -8,7 +8,12 @@
     margin-right: 20px;
     cursor: pointer;
 }
-
+.linkLoginCont {
+    display: inline-block;
+}
+.linkLogin {
+    display: flex;
+}
 .logo {
     display: flex;
     align-items: center;
